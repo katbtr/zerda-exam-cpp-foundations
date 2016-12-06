@@ -8,24 +8,37 @@ using namespace std;
 
 int main() {
 
-    Carrier carrier(1000);
     F16 ac1;
     F35 ac2;
 
-    carrier.add_aircraft(ac1);
-    carrier.add_aircraft(ac2);
 
-    carrier.fill_aircraft_by_id(0);
-    carrier.fill_aircraft_by_id(1);
-    carrier.fight_aircraft_by_id(0);
-    carrier.fight_aircraft_by_id(1);
+    Carrier carrier1(1000);
 
 
-    cout << carrier.get_status() << endl;
+    carrier1.add_aircraft(ac1);
+    carrier1.add_aircraft(ac2);
 
-    cout << ac1.get_status() << endl;
-    cout << "used ammo: " << ac1.refill() << endl;
-    cout << ac1.get_status() << endl;
-    cout << ac2.get_status() << endl;
-  //  cout << ac2.get_id() << endl;
+    carrier1.fill_aircraft_by_id(0);
+    carrier1.fill_aircraft_by_id(1);
+
+
+    cout << "Carrier 1:" << endl << carrier1.get_status() << endl;
+
+
+    Carrier carrier2(1000);
+
+    carrier2.add_aircraft(ac1);
+    carrier2.add_aircraft(ac2);
+
+    carrier2.fill_aircraft_by_id(0);
+    carrier2.fill_aircraft_by_id(1);
+
+
+
+    cout << "Carrier 2:" << endl << carrier2.get_status() << endl;
+
+
+    carrier1.fight_carrier(carrier2);
+
+    cout << "Carrier 1:" << endl << carrier1.get_status() << endl;
 }

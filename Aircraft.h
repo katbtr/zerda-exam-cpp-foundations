@@ -22,6 +22,7 @@ public:
     const unsigned int get_aircraft_by_id() const;
     std::string get_type();
     std::string get_status();
+//    int Aircraft::get_max_ammo();
 };
 
 

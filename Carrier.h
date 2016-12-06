@@ -10,8 +10,9 @@ private:
     std::vector<Aircraft> aircrafts;
     unsigned int aircraft_count;
     unsigned int ammo;
+    unsigned int health_point;
 public:
-    Carrier(unsigned int ammo);
+    Carrier(unsigned int ammo_storage);
     std::string get_status();
     void add_aircraft(Aircraft& aircraft);
     void fill_aircraft_by_id(unsigned int id);
@@ -19,6 +20,8 @@ public:
     Aircraft& get_aircraft_by_id(unsigned int id);
     unsigned int get_all_damages();
     std::string get_all_aircraft_status();
+    void fight_carrier(Carrier& other_carrier);
+    bool is_dead();
 };
 
 

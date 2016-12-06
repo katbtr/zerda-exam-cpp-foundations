@@ -37,3 +37,8 @@ string Aircraft::get_status() {
     return "Type: " + type_name + ", Ammo: " + to_string(ammo) + ", Base Damage: " + to_string(base_damage) +
             ", All Damage: " + to_string(all_damage);
 }
+/*
+int Aircraft::get_max_ammo() {
+    return max_ammo;
+}
+ */
