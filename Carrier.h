@@ -7,14 +7,16 @@
 
 class Carrier {
 private:
-    std::vector<Aircraft> aircrafts;
+    std::vector<Aircraft*> aircrafts;
     unsigned int aircraft_count;
     unsigned int ammo;
     unsigned int health_point;
 public:
     Carrier(unsigned int ammo_storage);
+    ~Carrier();
     std::string get_status();
-    void add_aircraft(Aircraft& aircraft);
+  //  void add_aircraft(Aircraft& aircraft);
+    void add_aircraft(std::string type_of_aircraft);
     void fill_aircraft_by_id(unsigned int id);
     void fight_aircraft_by_id(unsigned int id);
     Aircraft& get_aircraft_by_id(unsigned int id);
