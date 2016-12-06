@@ -3,10 +3,15 @@
 
 using namespace std;
 
+unsigned int Aircraft::LAST_ID = 0;
+
 Aircraft::Aircraft() {
     this->ammo = 0;
     this->max_ammo;
     this->base_damage;
+    this->all_damage = 0;
+    this->id = Aircraft::LAST_ID;
+    LAST_ID++;
 }
 
 int Aircraft::refill() {
@@ -18,6 +23,10 @@ int Aircraft::fight() {
     all_damage = base_damage * ammo;
     ammo = 0;
     return all_damage;
+}
+
+const unsigned int Aircraft::get_aircraft_by_id() const {
+    return id;
 }
 
 string Aircraft::get_type() {
